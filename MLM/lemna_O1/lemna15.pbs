@@ -1,0 +1,9 @@
+#!/bin/bash
+#PBS -N LEMNA15
+#PBS -l select=1:ncpus=8:mem=100gb:ngpus=1:gpu_model=k40
+#PBS -l walltime=24:00:00
+#PBS -j oe
+module load anaconda/5.1.0 cuDNN/10.0v7.4.2 cuda-toolkit/10.0.130  openblas/0.3.5
+source activate lemna_py27
+cd ~/8580/lemna_mc/Explaining-DL/lemna
+python lemna.py --f=15
